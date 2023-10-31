@@ -12,3 +12,7 @@ connection.on(
 	'error',
 	console.error.bind(console, 'failed to connect to mongoDb'),
 );
+connection.on(
+	'connected',
+	console.log.bind(console, 'connected to mongoDb successfully'),
+);
