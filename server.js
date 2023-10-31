@@ -4,6 +4,7 @@ const fileUploader = require('./middlewares/fileUploader.middleware');
 
 const app = express();
 require('./config/env.config');
+require('./config/mongoose.config');
 
 const port = process.env.PORT;
 

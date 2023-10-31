@@ -6,7 +6,7 @@ const checkEnvVar = require('../utils/checkEnvVar.util');
 /**
  * ! PUT YOUR NECESSARY ENVIRONMENT VARS INSIDE EnvList ARRAY
  */
-const EnvList = ['PORT'];
+const EnvList = ['PORT', 'DB_NAME', 'DB_URL'];
 
 dotenv.config();
 
