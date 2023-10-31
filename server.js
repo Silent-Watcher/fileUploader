@@ -22,7 +22,8 @@ app.get('/', (req, res) => {
 });
 
 app.get('/uploads', fileUploader.single('image'), (req, res) => {
-	res.status(200).json(req.file);
+	res.status(200).json(req.file); // req.file.path
+	
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
