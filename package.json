@@ -7,7 +7,7 @@
 	"scripts": {
 		"start": "node --watch server.js",
 		"prettier": "npx prettier --write .",
-		"tailwind:css": "postcss public/css/tailwind.css -o public/css/style.css"
+		"tailwind:css": "postcss public/css/tailwind.css -o public/css/style.css --watch"
 	},
 	"dependencies": {
 		"autoprefixer": "^10.4.16",

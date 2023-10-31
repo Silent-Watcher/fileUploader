@@ -2,7 +2,14 @@
 module.exports = {
 	content: ['./views/**/*.ejs'],
 	theme: {
-		extend: {},
+		container: {
+			center: true,
+		},
+		extend: {
+			colors:{
+				primary: '#68a063',
+			}
+		},
 	},
 	plugins: [],
 };
