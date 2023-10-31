@@ -4,11 +4,12 @@ module.exports = {
 	theme: {
 		container: {
 			center: true,
+			padding: '1rem',
 		},
 		extend: {
-			colors:{
+			colors: {
 				primary: '#68a063',
-			}
+			},
 		},
 	},
 	plugins: [],
