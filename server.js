@@ -10,23 +10,26 @@ require('./config/mongoose.config');
 
 const port = process.env.PORT;
 
+app.use(
+	express.json(),
+	express.urlencoded({ extended: true }),
+	express.static('public'),
+	(req, res, next) => {
+		res.locals = { title: 'file uploader' };
+		next();
+	},
+);
+
 app.set('view engine', 'ejs');
 app.set('views', join(__dirname, 'views'));
-app.use(express.static('public'));
-
-app.use((req, res, next) => {
-	res.locals = { title: 'file uploader' };
-	next();
-});
 
 app.get('/', (req, res) => {
 	res.status(200).render('index');
 });
 
-app.get('/uploads', fileUploader.single('image'), async (req, res, next) => {
+app.post('/uploads', fileUploader.single('image'), async (req, res, next) => {
 	try {
 		let path = req.file.path;
-		console.log(path);
 		let result = await imageModel.create({ path });
 		res.status(201).send(result);
 	} catch (error) {
@@ -39,7 +42,3 @@ app.use(errorHandler);
 const server = app.listen(port, () =>
 	console.log(`Example app listening on port ${port}!`),
 );
-server.on('connection', function (socket) {
-	// 10 minutes timeout
-	socket.setTimeout(10 * 60 * 1000);
-});

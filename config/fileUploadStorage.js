@@ -3,9 +3,15 @@ const multer = require('multer');
 const { join, extname } = require('path');
 const { mkdirSync, existsSync } = require('fs');
 
-// new Date().getFullYear().toString(),
-// new Date().getMonth().toString(),
-// new Date().getDay().toString(),
+const BASE_FILE_UPLOAD_PATH = join(
+	__dirname,
+	'..',
+	'public',
+	'uploads',
+	new Date().getFullYear().toString(),
+	new Date().getMonth().toString(),
+	new Date().getDay().toString(),
+);
 
 const fileUploadStorage = multer.diskStorage({
 	filename: (req, file, cb) => {
@@ -29,16 +35,7 @@ const fileUploadStorage = multer.diskStorage({
 			);
 	},
 	destination: (req, file, cb) => {
-		const BASE_FILE_UPLOAD_PATH = join(
-			__dirname,
-			'..',
-			'public',
-			'uploads',
-		);
-		if (!existsSync(BASE_FILE_UPLOAD_PATH)) {
-			mkdirSync(BASE_FILE_UPLOAD_PATH);
-			console.log('path not exists!');
-		}
+		mkdirSync(BASE_FILE_UPLOAD_PATH, { recursive: true });
 		cb(null, BASE_FILE_UPLOAD_PATH);
 	},
 });
