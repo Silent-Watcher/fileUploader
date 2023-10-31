@@ -1,0 +1,21 @@
+{
+	"private": "true",
+	"main": "server.js",
+	"engines": {
+		"node": "v21.1.0"
+	},
+	"scripts": {
+		"start": "node --watch server.js",
+		"prettier": "npx prettier --write ."
+	},
+	"dependencies": {
+		"dotenv": "^16.3.1",
+		"ejs": "^3.1.9",
+		"express": "^4.18.2",
+		"mongoose": "^8.0.0",
+		"multer": "^1.4.5-lts.1"
+	},
+	"devDependencies": {
+		"prettier": "^3.0.3"
+	}
+}
