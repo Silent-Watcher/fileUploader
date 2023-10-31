@@ -1,5 +1,6 @@
 const express = require('express');
 const { join } = require('path');
+const fileUploader = require('./middlewares/fileUploader.middleware');
 
 const app = express();
 require('./config/env.config');
@@ -17,6 +18,10 @@ app.use((req, res, next) => {
 
 app.get('/', (req, res) => {
 	res.status(200).render('index');
+});
+
+app.get('/uploads', fileUploader.single('image'), (req, res) => {
+	res.status(200).json(req.file);
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
