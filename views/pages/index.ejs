@@ -22,7 +22,7 @@
 									<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
 								</svg>
 								<p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
-								<p class="text-xs text-gray-500 dark:text-gray-400">JPEG, PNG, JPG or WEBP (MAX. 800x400px)</p>
+								<p class="text-xs text-gray-500 dark:text-gray-400">JPEG, PNG, JPG or WEBP (MAX. 827x640px)</p>
 							</div>
 							<input id="dropzone-file" type="file" class="hidden" accept="image/*" name="image" required/>
 						</label>
@@ -50,10 +50,10 @@
 						<div class="grid grid-cols-2 gap-4 mt-10 md:grid-cols-3">
 							<% images.forEach((image,index) => { %>
 								<div class="relative">
-									<button type="button" class="closeBtn ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700 absolute top-0 right-0" data-dismiss-target="#toast-default" aria-label="Close">
+									<button type="button" class="removeImgBtn ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700 absolute top-0 right-0" data-dismiss-target="#toast-default" aria-label="Close">
 										X
 									</button>
-									<img class="h-auto max-w-full rounded-lg" src="<%- image.path %>" alt="img-<%- index %>">
+									<img id="<%- image._id %>" class="h-auto max-w-full rounded-lg" src="<%- image.path %>" alt="img-<%- index %>">
 								</div>
 							<% }) %>
 						</div>

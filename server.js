@@ -1,5 +1,7 @@
 const express = require('express');
 const { join } = require('path');
+const serveFavicon = require('serve-favicon');
+
 const errorHandler = require('./middlewares/errorHandler.middleware');
 const notFoundError = require('./middlewares/notFoundError.middleware');
 const router = require('./routes/router');
@@ -14,6 +16,7 @@ app.use(
 	express.json(),
 	express.urlencoded({ extended: true }),
 	express.static('public'),
+	serveFavicon('public/img/favicon.ico'),
 	(req, res, next) => {
 		res.locals = { title: 'file uploader' };
 		next();
