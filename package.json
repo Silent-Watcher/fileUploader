@@ -1,6 +1,7 @@
 {
 	"private": "true",
 	"main": "server.js",
+	"version": "0.0.0",
 	"engines": {
 		"node": "v21.1.0"
 	},
@@ -24,5 +25,6 @@
 	"devDependencies": {
 		"nodemon": "^3.0.1",
 		"prettier": "^3.0.3"
-	}
+	},
+	"license": "MIT"
 }
