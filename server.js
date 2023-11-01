@@ -3,6 +3,7 @@ const { join } = require('path');
 const fileUploader = require('./middlewares/fileUploader.middleware');
 const imageModel = require('./models/image.model');
 const errorHandler = require('./middlewares/errorHandler.middleware');
+const notFoundError = require('./middlewares/notFoundError.middleware');
 
 const app = express();
 require('./config/env.config');
@@ -21,7 +22,10 @@ app.use(
 );
 
 app.set('view engine', 'ejs');
-app.set('views', join(__dirname, 'views'));
+app.set('views', [
+	join(__dirname, 'views', 'pages'),
+	join(__dirname, 'views', 'errors'),
+]);
 
 app.get('/', async (req, res) => {
 	let images = await imageModel.find({});
@@ -32,12 +36,13 @@ app.post('/uploads', fileUploader.single('image'), async (req, res, next) => {
 	try {
 		let path = req.file.path;
 		let result = await imageModel.create({ path });
-		res.status(302).redirect('/')
+		res.status(302).redirect('/');
 	} catch (error) {
 		next(error);
 	}
 });
 
+app.use(notFoundError);
 app.use(errorHandler);
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
