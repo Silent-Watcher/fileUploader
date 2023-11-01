@@ -1,4 +1,5 @@
 {
+	"author": "ali t.nazari <alitabatabaee20@gmail.com>",
 	"private": "true",
 	"main": "server.js",
 	"version": "0.0.0",
@@ -8,7 +9,8 @@
 	"scripts": {
 		"start": "nodemon server.js",
 		"prettier": "npx prettier --write .",
-		"tailwind:css": "postcss public/css/tailwind.css -o public/css/style.css --watch"
+		"tailwind:css": "postcss public/css/tailwind.css -o public/css/style.css --watch",
+		"prepare": "husky install"
 	},
 	"dependencies": {
 		"autoprefixer": "^10.4.16",
@@ -24,7 +26,15 @@
 	},
 	"devDependencies": {
 		"nodemon": "^3.0.1",
-		"prettier": "^3.0.3"
+		"prettier": "^3.0.3",
+		"commitizen": "^4.3.0",
+		"cz-conventional-changelog": "^3.3.0",
+		"husky": "^8.0.0"
+	},
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
 	},
 	"license": "MIT"
 }

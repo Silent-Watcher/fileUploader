@@ -9,7 +9,7 @@ window.addEventListener('load', () => {
 	new kursor({
 		type: 1,
 		removeDefaultCursor: true,
-		color: '#476582'
+		color: '#476582',
 	});
 
 	submitBtn.addEventListener('click', () => {
