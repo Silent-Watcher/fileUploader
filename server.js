@@ -23,15 +23,16 @@ app.use(
 app.set('view engine', 'ejs');
 app.set('views', join(__dirname, 'views'));
 
-app.get('/', (req, res) => {
-	res.status(200).render('index');
+app.get('/', async (req, res) => {
+	let images = await imageModel.find({});
+	res.status(200).render('index', { images });
 });
 
 app.post('/uploads', fileUploader.single('image'), async (req, res, next) => {
 	try {
 		let path = req.file.path;
 		let result = await imageModel.create({ path });
-		res.status(201).send(result);
+		res.status(302).redirect('/')
 	} catch (error) {
 		next(error);
 	}
@@ -39,6 +40,4 @@ app.post('/uploads', fileUploader.single('image'), async (req, res, next) => {
 
 app.use(errorHandler);
 
-const server = app.listen(port, () =>
-	console.log(`Example app listening on port ${port}!`),
-);
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
