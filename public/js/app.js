@@ -3,32 +3,32 @@
 const input = document.querySelector('#dropzone-file');
 const closePreviewButton = document.querySelector('.closeBtn');
 const removeImgButtons = document.querySelectorAll('.removeImgBtn');
-
-input.addEventListener('change', (event) => {
-	if (event.target.files.length > 0) {
-		let img = event.target.files[0];
-		showPreview(img);
-	} else removePreview();
-});
-
-function showPreview(img) {
-	``;
-	const previewImg = document.querySelector('#preview__img');
-	const previewTitle = document.querySelector('#preview__img-title');
-	previewImg.src = URL.createObjectURL(img);
-	previewImg.parentElement.classList.replace('hidden', 'flex');
-	previewTitle.innerHTML = img.name;
-}
-
-function removePreview() {
-	const previewImg = document.querySelector('#preview__img');
-	previewImg.parentElement.classList.replace('flex', 'hidden');
-}
+const submitBtn = document.querySelector('#submitBtn');
 
 window.addEventListener('load', () => {
+	new kursor({
+		type: 1,
+		removeDefaultCursor: true,
+		color: '#476582'
+	});
+
+	submitBtn.addEventListener('click', () => {
+		if (!input.value) {
+			Swal.fire('Error!', 'no image selected!', 'error');
+		}
+	});
+
+	input.addEventListener('change', (event) => {
+		if (event.target.files.length > 0) {
+			let img = event.target.files[0];
+			showPreview(img);
+		} else removePreview();
+	});
+
 	closePreviewButton.addEventListener('click', (event) => {
 		showConfirmDeletionModal(event, closePreview);
 	});
+
 	removeImgButtons.forEach((btn) => {
 		btn.addEventListener('click', (event) => {
 			showConfirmDeletionModal(event, removeImage);
@@ -61,12 +61,25 @@ function closePreview(event) {
 async function removeImage(event) {
 	let imageId = event.target.nextElementSibling.id;
 	let result = await fetch(`/images/${imageId}`, {
-		method: 'DELETE',
+		method: 'delete',
 	});
-	result = await result.json()
-	if (result) {
+	result = await result.json();
+	console.log('result: ', result);
+	if (result.user) {
 		event.target.parentElement.remove();
-		Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
+		Swal.fire('Deleted!', 'Your image has been deleted.', 'success');
 	}
-	
+}
+
+function showPreview(img) {
+	const previewImg = document.querySelector('#preview__img');
+	const previewTitle = document.querySelector('#preview__img-title');
+	previewImg.src = URL.createObjectURL(img);
+	previewImg.parentElement.classList.replace('hidden', 'flex');
+	previewTitle.innerHTML = img.name;
+}
+
+function removePreview() {
+	const previewImg = document.querySelector('#preview__img');
+	previewImg.parentElement.classList.replace('flex', 'hidden');
 }
