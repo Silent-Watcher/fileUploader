@@ -45,26 +45,25 @@
 				<h2 class="mt-3 mb-4 text-3xl font-extrabold text-gray-900 md:mt-0 dark:text-white lg:text-5xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Images</span>📷</h2>
 				<!-- heading-end -->
 				<!-- gallery start -->
-				<div class="grid grid-cols-2 gap-4 mt-10 md:grid-cols-3">
-					<div class="relative">
-						<button type="button" class="closeBtn ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700 absolute top-0 right-0" data-dismiss-target="#toast-default" aria-label="Close">
-							X
-						</button>
-						<img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
-					</div>
-					<div class="relative">
-						<button type="button" class="closeBtn ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700 absolute top-0 right-0" data-dismiss-target="#toast-default" aria-label="Close">
-						X
-						</button>
-						<img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
-					</div>
-					<div class="relative">
-						<button type="button" class="closeBtn ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700 absolute top-0 right-0" data-dismiss-target="#toast-default" aria-label="Close">
-							X
-						</button>
-						<img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
-					</div>
-				</div>
+				
+					<% if (Object.values(images).length > 0) { %>
+						<div class="grid grid-cols-2 gap-4 mt-10 md:grid-cols-3">
+							<% images.forEach((image,index) => { %>
+								<div class="relative">
+									<button type="button" class="closeBtn ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700 absolute top-0 right-0" data-dismiss-target="#toast-default" aria-label="Close">
+										X
+									</button>
+									<img class="h-auto max-w-full rounded-lg" src="<%- image.path %>" alt="img-<%- index %>">
+								</div>
+							<% }) %>
+						</div>
+					<% } else { %>
+						<p>
+							<lottie-player class="mx-auto" src="https://assets5.lottiefiles.com/packages/lf20_r1gncjwd.json" background="transparent" speed="1" style="width: 200px; height: 200px" loop="" autoplay=""></lottie-player>
+						</p>
+					<% } %>
+					 
+			
 				<!-- gallery end -->
 			</div>
 			<!-- right section-end -->
@@ -75,6 +74,7 @@
 			<!-- footer-end -->
 		</main>
 	</body>
+	<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 	<script src="js/app.js"></script>
 </html>

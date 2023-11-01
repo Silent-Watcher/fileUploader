@@ -1,4 +1,5 @@
 'use strict';
+const imageModel = require('../models/image.model');
 
 const handleIndex = async (req, res) => {
 	let images = await imageModel.find({});

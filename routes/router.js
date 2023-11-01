@@ -1,7 +1,6 @@
 'use strict';
 
 const { Router } = require('express');
-const imageModel = require('../models/image.model');
 const fileUploader = require('../middlewares/fileUploader.middleware');
 const handleIndex = require('../controllers/index.controller');
 const uploadFile = require('../controllers/uploads.controller');

@@ -10,7 +10,7 @@ input.addEventListener('change', (event) => {
 	} else removePreview();
 });
 
-function showPreview(img) {
+function showPreview(img) {``
 	const previewImg = document.querySelector('#preview__img');
 	const previewTitle = document.querySelector('#preview__img-title');
 	previewImg.src = URL.createObjectURL(img);
@@ -22,7 +22,6 @@ function removePreview() {
 	const previewImg = document.querySelector('#preview__img');
 	previewImg.parentElement.classList.replace('flex', 'hidden');
 }
-
 
 window.addEventListener('load', () => {
 	closeButtons.forEach((btn) => {
@@ -37,13 +36,14 @@ window.addEventListener('load', () => {
 				confirmButtonText: 'Yes, delete it!',
 			}).then((result) => {
 				if (result.isConfirmed) {
-					event.target.parentElement.remove();
+					input.value = null;
+					event.target.parentElement.classList.replace('flex', 'hidden');
 					Swal.fire(
 						'Deleted!',
 						'Your file has been deleted.',
 						'success',
 					);
-				} 
+				}
 			});
 		});
 	});
