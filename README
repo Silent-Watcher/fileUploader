@@ -81,7 +81,8 @@ git clone https://github.com/Silent-Watcher/fileUploader
 ```bash
   APP_ENV = value
 ```
-checkout .env.example file for possible values 
+
+checkout .env.example file for possible values
 
 6. navigate to env.config.js file inside of config directory for important env variables. you have to define these variables before running the app
 

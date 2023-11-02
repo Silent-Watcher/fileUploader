@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/Silent-Watcher/fileUploader/compare/v1.0.0...v1.1.0) (2023-11-02)
+
+
+### Features
+
+* users can now switch between lightmode and darkmode ([9872369](https://github.com/Silent-Watcher/fileUploader/commit/9872369f56093d1dfc5d161319c3fd48ab25fd99))
+
 ## 1.0.0 (2023-11-01)
 
 ### Features

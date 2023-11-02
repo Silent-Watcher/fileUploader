@@ -2,7 +2,7 @@
 	"author": "ali t.nazari <alitabatabaee20@gmail.com>",
 	"private": "true",
 	"main": "server.js",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"engines": {
 		"node": "v21.1.0"
 	},
