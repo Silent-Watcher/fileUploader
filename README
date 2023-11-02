@@ -1,4 +1,4 @@
-![rock-paper-scissors](https://github.com/Silent-Watcher/rock-paper-scissors/blob/master/public/img/Screenshot%20(302).jpg)
+![FileUploader](public/img/banner.png)
 
 # FileUploader
 
@@ -9,7 +9,6 @@ FileUploader is a simple image uploader application that allows you to upload im
 </p>
 
 [![Star this project](https://img.shields.io/badge/-⭐%20Star%20this%20project-yellow?style=for-the-badge)](https://github.com/Silent-Watcher/fileUploader)
-
 
 ## Table of Contents
 
@@ -25,27 +24,29 @@ FileUploader is a simple image uploader application that allows you to upload im
 ## Demo
 
 Experience the power of the fileUploader by visiting the demo page.
+
 <p>
  
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/Silent-Watcher/fileUploader)
 
 </p>
 
-
 ## Features
 
-- **Image Uploading**: Easily upload images from your device.
-- **MongoDB Integration**: Images are stored in MongoDB, ensuring data persistence.
-- **Responsive Design**: The web application is designed to work seamlessly on various devices and screen sizes, ensuring a responsive and user-friendly experience.
-- **Image Display**:View the uploaded images after they have been successfully stored in the database.
-- **User-Friendly Interface**: The web interface is designed with a clean and intuitive layout, making it easy for users to understand and play the game.
-- **Open Source**: The project is hosted on GitHub and is open source, allowing developers to explore the codebase, contribute to the project, or use it as a learning resource.
+-   **Image Uploading**: Easily upload images from your device.
+-   **MongoDB Integration**: Images are stored in MongoDB, ensuring data persistence.
+-   **Responsive Design**: The web application is designed to work seamlessly on various devices and screen sizes, ensuring a responsive and user-friendly experience.
+-   **Image Display**:View the uploaded images after they have been successfully stored in the database.
+-   **User-Friendly Interface**: The web interface is designed with a clean and intuitive layout, making it easy for users to understand and play the game.
+-   **Open Source**: The project is hosted on GitHub and is open source, allowing developers to explore the codebase, contribute to the project, or use it as a learning resource.
 
 ## Prerequisites
 
 In order to run this project, you will need to have the following installed on your computer:
-- nodejs
-- yarn | npm | pnpm
+
+-   nodejs
+-   yarn | npm | pnpm
+-   A running instance of MongoDB for database storage.
 
 ## Installation
 
@@ -53,30 +54,36 @@ To install the application, follow these steps:
 
 1.  Clone the repository to your local machine:
 
- 
 ```bash
 git clone https://github.com/Silent-Watcher/fileUploader
 ```
 
 2. Navigate to the project directory in your terminal.
 
- 
 ```bash
   cd fileUploader
 ```
+
 3. Run `npm install` to install the necessary packages.
 
- 
 ```bash
   npm install
 ```
 
 4. Run `npm run prepare` to install husky.
 
- 
 ```bash
   npm run prepare
 ```
+
+5. Create a `.env` file in the project's root directory and configure the following variables:
+
+```bash
+  APP_ENV = value
+```
+checkout .env.example file for possible values 
+
+6. navigate to env.config.js file inside of config directory for important env variables. you have to define these variables before running the app
 
 ## usage
 
@@ -85,7 +92,9 @@ To start the application, run `npm run dev` . This will start the application on
 ```bash
 npm run dev
 ```
+
 ## Technologies
+
 <p>
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
@@ -101,7 +110,7 @@ npm run dev
 
 ## Contributing 🤝🏾
 
-Contributions to this project are welcome. 
+Contributions to this project are welcome.
 If you encounter any issues or have suggestions for improvement, please open an issue on the GitHub repository.
 
 Before contributing, please review the contribution guidelines.
@@ -110,8 +119,8 @@ Before contributing, please review the contribution guidelines.
 
 For additional information or inquiries, you can reach out to the project maintainer:
 
-- Name: Silent-Watcher
-- Email: alitabatabaee20@mail.com
+-   Name: Silent-Watcher
+-   Email: alitabatabaee20@mail.com
 
 Feel free to contact the maintainer for any questions or feedback regarding the project.
 
@@ -122,6 +131,7 @@ Feel free to contact the maintainer for any questions or feedback regarding the 
 This project is licensed under the MIT License. You are free to modify, distribute, and use the code for personal and commercial purposes. See the LICENSE file for details.
 
 ## Sponsor ❤
+
 If you like this project, please give it a star ⭐ and/or consider buying me a coffee(s). Every donation is appreciated.
 
 <a href="https://www.coffeete.ir/silentwatcher" rel="nofollow">
@@ -129,4 +139,3 @@ If you like this project, please give it a star ⭐ and/or consider buying me a 
 </a>
 
 <a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/6038c8f1fd8f60de75477470e5a87210e9256202e01dfba9986446304a0f0254/68747470733a2f2f63617073756c652d72656e6465722e76657263656c2e6170702f6170693f747970653d776176696e6726636f6c6f723d6772616469656e74266865696768743d36302673656374696f6e3d666f6f746572"><img src="https://camo.githubusercontent.com/6038c8f1fd8f60de75477470e5a87210e9256202e01dfba9986446304a0f0254/68747470733a2f2f63617073756c652d72656e6465722e76657263656c2e6170702f6170693f747970653d776176696e6726636f6c6f723d6772616469656e74266865696768743d36302673656374696f6e3d666f6f746572" data-canonical-src="https://capsule-render.vercel.app/api?type=waving&amp;color=gradient&amp;height=60&amp;section=footer" style="max-width: 100%;"></a>
-
