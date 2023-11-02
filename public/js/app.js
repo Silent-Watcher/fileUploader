@@ -4,6 +4,7 @@ const input = document.querySelector('#dropzone-file');
 const closePreviewButton = document.querySelector('.closeBtn');
 const removeImgButtons = document.querySelectorAll('.removeImgBtn');
 const submitBtn = document.querySelector('#submitBtn');
+const themeBtn = document.querySelector('#themeBtn');
 
 window.addEventListener('load', () => {
 	new kursor({
@@ -33,6 +34,12 @@ window.addEventListener('load', () => {
 		btn.addEventListener('click', (event) => {
 			showConfirmDeletionModal(event, removeImage);
 		});
+	});
+
+	themeBtn.addEventListener('click', function (e) {
+		e.preventDefault();
+		document.documentElement.classList.toggle('dark');
+		this.firstElementChild.classList.toggle('bxs-sun');
 	});
 });
 

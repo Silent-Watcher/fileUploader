@@ -4,11 +4,18 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title><%- title %></title>
+		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 		<link href="https://cdn.jsdelivr.net/npm/kursor@0.1.6/dist/kursor.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="css/style.css"/>
 	</head>
-	<body class="flex flex-col items-center content-center min-h-full overflow-x-hidden bg-white select-none dark:bg-gray-800 dark:text-white text-gray-950">
-		<main class="container flex flex-wrap items-start content-center min-h-screen text-center">
+	<body class="flex flex-col items-center content-center min-h-full overflow-x-hidden bg-white select-none dark:bg-gray-800 dark:text-white text-gray-950 ">
+		<nav id="socials" class="text-center">
+			<ul class="flex items-start mt-5">
+				<li class="mx-5 text-3xl cursor-pointer"><a class="" target="_blank" rel="noreferrer" href="https://github.com/Silent-Watcher/fileUploader"><i class='text-transparent bx bxl-github bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400'></i></a></li>
+				<li class="mx-5 text-2xl cursor-pointer"><a id="themeBtn" href=""><i class='text-zinc-700 dark:text-white bx bxs-moon'></i></a></li>
+			</ul>
+		</nav>
+		<main class="container flex flex-wrap items-start content-start min-h-screen text-center">
 			<!-- left section-start -->
 			<div class="w-full text-center md:w-1/2 md:mx-auto">
 				<!-- header-start -->
