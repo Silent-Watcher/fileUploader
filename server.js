@@ -1,6 +1,8 @@
 const express = require('express');
 const { join } = require('path');
 const serveFavicon = require('serve-favicon');
+const expressEjsLayouts = require('express-ejs-layouts');
+
 
 const errorHandler = require('./middlewares/errorHandler.middleware');
 const notFoundError = require('./middlewares/notFoundError.middleware');
@@ -11,10 +13,12 @@ require('./config/env.config');
 require('./config/mongoose.config');
 
 const port = process.env.PORT;
+const LAYOUT_PATH = join(__dirname, "views", "layout", "layout.ejs");
 
 app.use(
 	express.json(),
 	express.urlencoded({ extended: true }),
+	expressEjsLayouts,
 	express.static('public'),
 	serveFavicon('public/img/favicon.ico'),
 	(req, res, next) => {
@@ -23,6 +27,7 @@ app.use(
 	},
 );
 
+app.set('layout', LAYOUT_PATH);
 app.set('view engine', 'ejs');
 app.set('views', [
 	join(__dirname, 'views', 'pages'),

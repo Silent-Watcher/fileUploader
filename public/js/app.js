@@ -7,12 +7,6 @@ const submitBtn = document.querySelector('#submitBtn');
 const themeBtn = document.querySelector('#themeBtn');
 
 window.addEventListener('load', () => {
-	new kursor({
-		type: 1,
-		removeDefaultCursor: true,
-		color: '#476582',
-	});
-
 	submitBtn.addEventListener('click', () => {
 		if (!input.value) {
 			Swal.fire('Error!', 'no image selected!', 'error');
@@ -34,12 +28,6 @@ window.addEventListener('load', () => {
 		btn.addEventListener('click', (event) => {
 			showConfirmDeletionModal(event, removeImage);
 		});
-	});
-
-	themeBtn.addEventListener('click', function (e) {
-		e.preventDefault();
-		document.documentElement.classList.toggle('dark');
-		this.firstElementChild.classList.toggle('bxs-sun');
 	});
 });
 

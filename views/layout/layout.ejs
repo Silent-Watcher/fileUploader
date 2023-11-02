@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title><%- title %></title>
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<link href="https://cdn.jsdelivr.net/npm/kursor@0.1.6/dist/kursor.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body class="flex flex-col items-center content-center min-h-full overflow-x-hidden bg-white select-none dark:bg-gray-800 dark:text-white text-gray-950">
+	<%- body %>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/kursor@0.1.6/dist/kursor.min.js"></script>
+<script>
+		new kursor({
+				type: 1,
+				removeDefaultCursor: true,
+				color: '#476582',
+			});
+			themeBtn.addEventListener('click', function (e) {
+				e.preventDefault();
+				document.documentElement.classList.toggle('dark');
+				this.firstElementChild.classList.toggle('bxs-sun');
+			});
+</script>
+</html>
