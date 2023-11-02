@@ -3,7 +3,6 @@ const { join } = require('path');
 const serveFavicon = require('serve-favicon');
 const expressEjsLayouts = require('express-ejs-layouts');
 
-
 const errorHandler = require('./middlewares/errorHandler.middleware');
 const notFoundError = require('./middlewares/notFoundError.middleware');
 const router = require('./routes/router');
@@ -13,7 +12,7 @@ require('./config/env.config');
 require('./config/mongoose.config');
 
 const port = process.env.PORT;
-const LAYOUT_PATH = join(__dirname, "views", "layout", "layout.ejs");
+const LAYOUT_PATH = join(__dirname, 'views', 'layout', 'layout.ejs');
 
 app.use(
 	express.json(),
