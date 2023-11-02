@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/Silent-Watcher/fileUploader/compare/v1.1.0...v1.2.0) (2023-11-02)
+
+
+### Features
+
+* add readme file ([9b1bbf6](https://github.com/Silent-Watcher/fileUploader/commit/9b1bbf614f2d1d53afdc1fe51786b9265f05886d))
+
+
+### Bug Fixes
+
+* fix layout bug for loading main javascript codes ([6abc266](https://github.com/Silent-Watcher/fileUploader/commit/6abc266609a03e8f198d730d348f3b40838d7080))
+
 ## [1.1.0](https://github.com/Silent-Watcher/fileUploader/compare/v1.0.0...v1.1.0) (2023-11-02)
 
 
