@@ -88,10 +88,10 @@ checkout .env.example file for possible values
 
 ## usage
 
-To start the application, run `npm run dev` . This will start the application on http://localhost:5173.
+To start the application, run `npm run start` . This will start the application on http://localhost:${env.port}.
 
 ```bash
-npm run dev
+npm run start
 ```
 
 ## Technologies
