@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/Silent-Watcher/fileUploader/compare/v1.2.0...v1.2.1) (2023-11-03)
+
+
+### Performance Improvements
+
+* add compression package for increasing the page load speed ([fcd1b75](https://github.com/Silent-Watcher/fileUploader/commit/fcd1b7574c2bea26ad6f67392e4cd98ac812d700))
+
 ## [1.2.0](https://github.com/Silent-Watcher/fileUploader/compare/v1.1.0...v1.2.0) (2023-11-02)
 
 ### Features
