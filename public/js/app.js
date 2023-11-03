@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable @cspell/spellchecker */
 'use strict';
 
 const input = document.querySelector('#dropzone-file');

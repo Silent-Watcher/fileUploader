@@ -9,6 +9,8 @@
 	"scripts": {
 		"start": "nodemon server.js",
 		"prettier": "npx prettier --write .",
+		"lint": "npx eslint .",
+		"lint:fix": "npx eslint --fix .",
 		"tailwind:css": "postcss public/css/tailwind.css -o public/css/style.css --watch",
 		"prepare": "husky install"
 	},
@@ -28,10 +30,14 @@
 		"tailwindcss": "^3.3.5"
 	},
 	"devDependencies": {
-		"@fullhuman/postcss-purgecss": "^5.0.0",
+		"@cspell/eslint-plugin": "^7.3.8",
 		"commitizen": "^4.3.0",
 		"cssnano": "^6.0.1",
 		"cz-conventional-changelog": "^3.3.0",
+		"eslint": "^8.52.0",
+		"eslint-config-prettier": "^9.0.0",
+		"eslint-plugin-node": "^11.1.0",
+		"eslint-plugin-prettier": "^5.0.1",
 		"husky": "^8.0.0",
 		"nodemon": "^3.0.1",
 		"postcss": "^8.4.31",

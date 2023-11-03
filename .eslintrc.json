@@ -1,0 +1,25 @@
+{
+	"env": {
+		"browser": true,
+		"commonjs": true,
+		"es2021": true
+	},
+	"extends": [
+		"eslint:recommended",
+		"plugin:node/recommended",
+		"plugin:@cspell/recommended",
+		"plugin:prettier/recommended"
+	],
+	"plugins": ["prettier"],
+	"parserOptions": {
+		"ecmaVersion": "latest"
+	},
+	"rules": {
+		"prettier/prettier": "error",
+		"eqeqeq": "warn",
+		"no-unused-vars": "off",
+		"node/no-unpublished-require": ["error", {
+            "allowModules": ["cssnano"]
+        }]
+	}
+}
