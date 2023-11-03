@@ -1,6 +1,6 @@
 'use strict';
 const multer = require('multer');
-const fileUploadStorage = require('../config/fileUploadStorage');
+const fileUploadStorage = multer.memoryStorage();
 const _3MB = 3e6;
 
 const fileUploader = multer({
