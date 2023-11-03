@@ -9,7 +9,7 @@ const uploadFile = async (req, res, next) => {
 		let { file: image } = req;
 		isImageValid(image);
 		let uploadedPath = await upload(image);
-		await imageModel.create({ path : uploadedPath });
+		await imageModel.create({ path: uploadedPath });
 		res.status(302).redirect('/');
 	} catch (error) {
 		next(error);
