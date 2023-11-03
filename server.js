@@ -18,10 +18,14 @@ const LAYOUT_PATH = join(__dirname, 'views', 'layout', 'layout.ejs');
 app.use(
 	express.json(),
 	express.urlencoded({ extended: true }),
-	compression({ level: 6, threshold: 0 , filter: (req,res)=>{
-		if(req.headers['x-no-compression']) return false 
-		else compression.filter(req,res)
-	}}),
+	compression({
+		level: 6,
+		threshold: 0,
+		filter: (req, res) => {
+			if (req.headers['x-no-compression']) return false;
+			else compression.filter(req, res);
+		},
+	}),
 	expressEjsLayouts,
 	express.static('public'),
 	serveFavicon('public/img/favicon.ico'),
