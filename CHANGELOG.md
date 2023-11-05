@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.2](https://github.com/Silent-Watcher/fileUploader/compare/v1.2.1...v1.2.2) (2023-11-05)
+
+
+### Performance Improvements
+
+* add helmet package for reducing application vulnerability ([e5aa607](https://github.com/Silent-Watcher/fileUploader/commit/e5aa6070cb1b6b65826493f83a1333c6ce504260))
+
 ## [1.2.1](https://github.com/Silent-Watcher/fileUploader/compare/v1.2.0...v1.2.1) (2023-11-03)
 
 
