@@ -7,6 +7,7 @@ const compression = require('compression');
 const errorHandler = require('./middlewares/errorHandler.middleware');
 const notFoundError = require('./middlewares/notFoundError.middleware');
 const router = require('./routes/router');
+const { default: helmet } = require('helmet');
 
 const app = express();
 require('./config/env.config');
@@ -16,6 +17,7 @@ const port = process.env.PORT;
 const LAYOUT_PATH = join(__dirname, 'views', 'layout', 'layout.ejs');
 
 app.use(
+	helmet(),
 	express.json(),
 	express.urlencoded({ extended: true }),
 	compression({
